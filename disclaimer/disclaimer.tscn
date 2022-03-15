@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://disclaimer/understood.png" type="Texture" id=1]
+[ext_resource path="res://disclaimer/disclaimer_resized.png" type="Texture" id=2]
+[ext_resource path="res://disclaimer/disclaimer.gd" type="Script" id=3]
+
+[node name="disclaimer" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="DisclaimerResized" type="Sprite" parent="."]
+position = Vector2( 512, 300 )
+texture = ExtResource( 2 )
+
+[node name="understood" type="Button" parent="DisclaimerResized"]
+margin_left = -142.0
+margin_top = -42.0
+margin_right = 147.0
+margin_bottom = 79.0
+icon = ExtResource( 1 )
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="DisclaimerResized/understood" to="." method="_on_understood_pressed"]
